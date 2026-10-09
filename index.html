@@ -4,452 +4,498 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>T. Riccoboni Asphalt Paving (website concept)</title>
-<meta name="description" content="Website concept for T. Riccoboni Asphalt Paving of Syosset: driveways, walkways, courts, parking lots and private roads across Long Island since 1987.">
+<meta name="description" content="Website concept for T. Riccoboni Asphalt Paving, Syosset NY: driveways, walkways, patios, parking lots, private roads and sport courts across Long Island since 1987.">
 <meta name="robots" content="noindex">
+<script>document.documentElement.className+=" js"</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800;900&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400..800&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
- --asphalt:#121212;--tar:#1c1c1c;--seam:#2c2c2c;--red:#d63a2f;--red-d:#b52a20;--stripe:#f2c230;
- --chalk:#f3f0e8;--paper:#fbfaf6;--ink:#151515;--muted:#5d5a55;--mist:#b9b5ad;
- --s1:4px;--s2:8px;--s3:16px;--s4:24px;--s5:32px;--s6:48px;--s7:72px;--s8:112px;
- --wrap:1200px;--r:4px;
- --display:"Big Shoulders Display",Impact,"Arial Narrow",sans-serif;--body:"Public Sans",system-ui,sans-serif;
+ --asph:#141414;--asph2:#1d1d1d;--asph3:#2a2a2a;--stone:#ebe7df;--paper:#f6f4ef;--card:#fffefb;
+ --ink:#141414;--soft:#5e5a54;--line:#dcd6cb;--brass:#b8955a;--brass-l:#d8bd8b;--brass-d:#7d5f2c;
+ --serif:"Bodoni Moda",Didot,Georgia,serif;--sans:"Hanken Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;
+ --ease:cubic-bezier(.2,.7,.2,1);--wrap:1240px;
 }
 *{box-sizing:border-box}
+[hidden]{display:none!important}
 html{scroll-behavior:smooth}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
-body{margin:0;font-family:var(--body);font-size:17px;line-height:1.6;color:var(--ink);background:var(--paper);-webkit-font-smoothing:antialiased}
-img{max-width:100%;display:block}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:clip}
+img,svg{display:block;max-width:100%}
 a{color:inherit}
-:focus-visible{outline:3px solid var(--stripe);outline-offset:3px}
-.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--s4)}
-.skip{position:absolute;left:-999px;top:0;background:var(--stripe);color:#000;padding:var(--s2) var(--s3);z-index:99;font-weight:700}
-.skip:focus{left:var(--s3);top:var(--s3)}
-h1,h2,h3{font-family:var(--display);font-weight:800;line-height:.95;letter-spacing:.005em;margin:0;text-transform:uppercase}
-.kicker{font-weight:700;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--red);margin:0 0 var(--s3);display:flex;align-items:center;gap:var(--s2)}
-.kicker::before{content:"";width:28px;height:4px;background:repeating-linear-gradient(90deg,var(--stripe) 0 10px,transparent 10px 16px)}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:var(--s2);min-height:52px;padding:0 var(--s4);border-radius:var(--r);font-weight:700;font-size:1rem;text-decoration:none;border:2px solid transparent;cursor:pointer;font-family:var(--body);transition:background .2s,transform .2s}
-.btn-red{background:var(--red);color:#fff}.btn-red:hover{background:var(--red-d)}
-.btn-line{border-color:currentColor;background:transparent;color:inherit}.btn-line:hover{background:rgba(255,255,255,.08)}
-.btn:active{transform:translateY(1px)}
+button{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--brass);outline-offset:3px}
+.wrap{width:min(100% - 40px,var(--wrap));margin-inline:auto}
+.skip{position:absolute;left:-999px;top:0;z-index:99;background:var(--ink);color:#fff;padding:8px 16px}
+.skip:focus{left:16px;top:16px}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.02;letter-spacing:-.015em;margin:0}
+.lbl{display:flex;align-items:center;gap:14px;font-size:.74rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--brass-d);margin:0 0 22px}
+.lbl::before{content:"";width:36px;height:1px;background:currentColor}
+.dark .lbl{color:var(--brass-l)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:56px;padding:0 30px;border:1px solid transparent;font-weight:700;font-size:.82rem;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:background .3s,color .3s,border-color .3s,transform .25s var(--ease)}
+.btn:active{transform:scale(.98)}
+.btn-b{background:var(--brass);color:var(--asph)}.btn-b:hover{background:var(--brass-l)}
+.btn-k{background:var(--asph);color:var(--paper)}.btn-k:hover{background:#000}
+.btn-w{border-color:rgba(246,244,239,.4);color:var(--paper)}.btn-w:hover{border-color:var(--paper);background:rgba(246,244,239,.06)}
+.btn-l{border-color:var(--ink);color:var(--ink)}.btn-l:hover{background:var(--ink);color:var(--paper)}
+.js .rv{opacity:0;transform:translateY(26px);transition:opacity 1s var(--ease),transform 1s var(--ease);transition-delay:calc(var(--d,0)*90ms)}
+.js .rv.in{opacity:1;transform:none}
 
-/* concept bar */
-.concept{background:var(--stripe);color:#111;font-size:.82rem;font-weight:600;text-align:center;padding:var(--s2) var(--s3)}
-.concept a{font-weight:700}
+.concept{background:#0b0b0b;color:#bdb7ac;font-size:.8rem;text-align:center;padding:7px 16px}
+.concept a{color:#fff;font-weight:600}
 
 /* header */
-header.site{background:var(--asphalt);color:#fff;position:sticky;top:0;z-index:40;border-bottom:1px solid var(--seam)}
-.hd{display:flex;align-items:center;justify-content:space-between;min-height:72px;gap:var(--s4)}
-.brand{text-decoration:none;display:flex;flex-direction:column;line-height:1}
-.brand b{font-family:var(--display);font-weight:900;font-size:1.65rem;letter-spacing:.02em}
-.brand b span{color:var(--red)}
-.brand small{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--mist);margin-top:5px}
-nav.main ul{list-style:none;margin:0;padding:0;display:flex;gap:var(--s4)}
-nav.main a{text-decoration:none;font-weight:600;font-size:.95rem;padding:var(--s2) 0;border-bottom:2px solid transparent}
-nav.main a:hover{border-color:var(--red)}
-.hd .btn{min-height:44px;padding:0 var(--s3);font-size:.95rem}
-.menu-btn{display:none;background:none;border:2px solid #444;color:#fff;min-width:48px;min-height:44px;border-radius:var(--r);font-weight:700;font-family:var(--body);cursor:pointer}
-@media (max-width:920px){
- nav.main{position:absolute;left:0;right:0;top:100%;background:var(--asphalt);border-bottom:1px solid var(--seam);display:none}
- nav.main.open{display:block}
- nav.main ul{flex-direction:column;gap:0;padding:var(--s2) var(--s4) var(--s4)}
- nav.main a{display:block;padding:var(--s3) 0;border-bottom:1px solid var(--seam)}
- .menu-btn{display:inline-flex;align-items:center;justify-content:center}
- .hd .call-top{display:none}
+.hdr{position:sticky;top:0;z-index:50;background:rgba(20,20,20,.94);backdrop-filter:blur(10px);color:var(--paper);border-bottom:1px solid #2b2b2b}
+.hdr .wrap{display:flex;align-items:center;gap:30px;min-height:78px}
+.brand{display:flex;flex-direction:column;text-decoration:none;margin-right:auto;min-height:48px;justify-content:center}
+.brand b{font-family:var(--serif);font-weight:600;font-size:1.55rem;letter-spacing:.01em;line-height:1}
+.brand small{font-size:.66rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--brass-l);margin-top:5px}
+.nav{display:flex;gap:28px}
+.nav a{text-decoration:none;font-size:.8rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:14px 0;color:#d6d1c8;transition:color .2s}
+.nav a:hover{color:var(--brass-l)}
+.hdr .tel{font-weight:700;text-decoration:none;white-space:nowrap;min-height:48px;display:inline-flex;align-items:center;letter-spacing:.04em}
+.hdr .btn{min-height:46px;padding:0 20px;font-size:.74rem}
+.menu{display:none;min-height:46px;min-width:48px;border:1px solid rgba(246,244,239,.4);background:none;color:var(--paper);font-weight:700;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;padding:0 14px;cursor:pointer}
+@media(max-width:1100px){.hdr .tel{display:none}}
+@media(max-width:920px){
+ .nav{display:none;position:absolute;left:0;right:0;top:100%;background:var(--asph);flex-direction:column;gap:0;padding:6px 20px 18px;border-bottom:1px solid #2b2b2b}
+ .nav.open{display:flex}.nav a{padding:16px 0;border-bottom:1px solid #2b2b2b}
+ .menu{display:inline-flex;align-items:center}.hdr .btn{display:none}
 }
 
 /* hero */
-.hero{background:var(--asphalt);color:#fff;position:relative;overflow:hidden}
-.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:var(--s6);align-items:center;padding-top:var(--s7);padding-bottom:var(--s8)}
-.hero h1{font-size:clamp(3rem,7.4vw,6.4rem);font-weight:900}
-.hero h1 em{font-style:normal;color:var(--red)}
-.hero p.lead{font-size:1.15rem;color:#d9d6cf;max-width:34em;margin:var(--s4) 0 var(--s5)}
-.cta-row{display:flex;flex-wrap:wrap;gap:var(--s3)}
-.hero-photos{position:relative;aspect-ratio:4/4.3}
-.hero-photos figure{margin:0;position:absolute;overflow:hidden;border-radius:var(--r);box-shadow:0 30px 60px rgba(0,0,0,.5)}
-.hero-photos figure img{width:100%;height:100%;object-fit:cover}
-.hp1{inset:0 18% 26% 0}
-.hp2{inset:46% 0 0 34%;border:6px solid var(--asphalt)}
-.hero-photos figcaption{position:absolute;left:var(--s3);bottom:var(--s3);background:rgba(0,0,0,.72);font-size:.78rem;font-weight:600;padding:var(--s1) var(--s2);border-radius:2px}
-.road{position:absolute;left:0;right:0;bottom:0;height:56px;background:var(--tar);border-top:1px solid var(--seam)}
-.road::after{content:"";position:absolute;left:0;right:0;top:50%;height:5px;margin-top:-2px;background:repeating-linear-gradient(90deg,var(--stripe) 0 48px,transparent 48px 84px);animation:drive 6s linear infinite}
-@keyframes drive{to{background-position:-84px 0}}
-@media (max-width:920px){.hero-grid{grid-template-columns:1fr;padding-top:var(--s6)}.hero-photos{max-width:560px;width:100%}}
+.hero{background:var(--asph);color:var(--paper);padding:64px 0 0;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;right:-10%;top:-30%;width:70%;height:120%;background:radial-gradient(closest-side,rgba(184,149,90,.12),transparent);pointer-events:none}
+.hero-g{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;align-items:center}
+.hero h1{font-size:clamp(2.8rem,5.8vw,5.4rem);font-weight:500}
+.hero h1 .l{display:block;overflow:hidden;padding-bottom:.06em}
+.hero h1 .l>span{display:block}
+.hero h1 .br{color:var(--brass-l)}
+.js .hero h1 .l>span{transform:translateY(105%);transition:transform 1.1s var(--ease);transition-delay:calc(var(--i)*120ms + 150ms)}
+.js .hero.go h1 .l>span{transform:none}
+.hero .lead{font-size:1.12rem;color:#c9c3b8;max-width:32em;margin:28px 0 34px}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.plan{position:relative;background:#1b1b1b;border:1px solid #2e2e2e;padding:14px}
+.plan svg{width:100%;height:auto}
+.plan .cap{display:flex;justify-content:space-between;gap:12px;padding:12px 4px 2px;font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#8e887e}
+.plan .cap b{color:var(--brass-l);font-weight:700}
+.creds{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:64px;border-top:1px solid #2e2e2e}
+.creds div{padding:26px 24px 30px 0}
+.creds div+div{padding-left:24px;border-left:1px solid #2e2e2e}
+.creds b{display:block;font-family:var(--serif);font-weight:500;font-size:2.4rem;line-height:1;color:var(--paper)}
+.creds b sup{font-size:.5em;vertical-align:top;margin-left:2px}
+.creds span{display:block;margin-top:10px;font-size:.88rem;color:#a39d92;line-height:1.4}
+@media(max-width:1000px){.hero-g{grid-template-columns:1fr;gap:44px}.creds{grid-template-columns:1fr 1fr}.creds div:nth-child(3){padding-left:0;border-left:0}.creds div:nth-child(n+3){border-top:1px solid #2e2e2e}}
+@media(max-width:520px){.hero{padding-top:40px}.creds div{padding:20px 12px 22px 0}.creds div+div{padding-left:12px}.creds b{font-size:1.9rem}}
 
-/* proof rail */
-.proof{background:var(--tar);color:#fff}
-.proof ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr)}
-.proof li{padding:var(--s5) var(--s4);border-left:1px solid var(--seam)}
-.proof li:first-child{border-left:0}
-.proof b{display:block;font-family:var(--display);font-size:2.6rem;font-weight:900;line-height:1;color:#fff}
-.proof b i{font-style:normal;color:var(--stripe)}
-.proof span{font-size:.9rem;color:var(--mist)}
-@media (max-width:820px){.proof ul{grid-template-columns:1fr 1fr}.proof li:nth-child(3){border-left:0}.proof li{border-top:1px solid var(--seam)}}
+/* plan svg */
+.lot{fill:#cdd3c3}
+.lot2{fill:#c3cab8}
+.street{fill:#3a3a3a}
+.walk{fill:#d9d5cc}
+.house{fill:#efebe3}
+.roof{fill:none;stroke:#b9b2a5;stroke-width:1.5}
+.gdoor{fill:#d9d3c7}
+.drv-edge{fill:none;stroke:#a4553a;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:7 3;opacity:0;transition:opacity .4s}
+.drv-edge.on{opacity:1}
+.drv{fill:none;stroke:#232323;stroke-linecap:butt;stroke-linejoin:round}
+.drv-sheen{fill:none;stroke:#fff;stroke-opacity:.05;stroke-linecap:butt;stroke-linejoin:round}
+.tree{fill:#9fb08e}
+.tree2{fill:#8a9c79}
+.roller rect{fill:var(--brass)}
 
-section{padding:var(--s8) 0}
-.sec-head{display:grid;grid-template-columns:1fr 1fr;gap:var(--s6);align-items:end;margin-bottom:var(--s6)}
-.sec-head h2{font-size:clamp(2.4rem,5vw,4.2rem)}
-.sec-head p{margin:0;color:var(--muted);font-size:1.05rem}
-.sec-head .kicker{color:var(--red);margin:0 0 var(--s3)}
-.flyover .sec-head .kicker{color:var(--stripe)}
-@media (max-width:820px){.sec-head{grid-template-columns:1fr;gap:var(--s3)}section{padding:var(--s7) 0}}
-
-/* services ledger */
-.ledger{border-top:3px solid var(--ink)}
-.ledger-row{display:grid;grid-template-columns:72px 1.1fr 1.6fr auto;gap:var(--s4);align-items:center;padding:var(--s4) 0;border-bottom:1px solid #d8d3c8}
-.ledger-row .no{font-family:var(--display);font-weight:800;font-size:1.4rem;color:var(--red)}
-.ledger-row h3{font-size:1.9rem}
-.ledger-row p{margin:0;color:var(--muted)}
-.ledger-row .tag{font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);border:1.5px solid var(--ink);padding:var(--s1) var(--s2);border-radius:2px;white-space:nowrap}
-@media (max-width:760px){.ledger-row{grid-template-columns:48px 1fr;row-gap:var(--s2)}.ledger-row p,.ledger-row .tag{grid-column:2}.ledger-row .tag{justify-self:start}}
+section{padding:112px 0}
+@media(max-width:760px){section{padding:76px 0}}
+.head{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:56px;align-items:end;margin-bottom:56px}
+.head h2{font-size:clamp(2.3rem,4.8vw,4.3rem)}
+.head p{margin:0;color:var(--soft);font-size:1.08rem;max-width:33em}
+.dark{background:var(--asph);color:var(--paper)}
+.dark .head p{color:#a39d92}
+@media(max-width:860px){.head{grid-template-columns:1fr;gap:18px;margin-bottom:36px}}
 
 /* work */
-.work{background:var(--chalk)}
-.gallery{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--s3)}
-.gallery figure{margin:0;position:relative;overflow:hidden;border-radius:var(--r);background:#ddd}
-.gallery img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3;transition:transform .5s}
-.gallery figure:hover img{transform:scale(1.04)}
-.gallery figcaption{position:absolute;left:0;right:0;bottom:0;padding:var(--s4) var(--s3) var(--s3);background:linear-gradient(transparent,rgba(0,0,0,.78));color:#fff;font-weight:600;font-size:.95rem}
-.g-a{grid-column:span 7;grid-row:span 2}.g-a img{aspect-ratio:auto;height:100%}
-.g-b,.g-c{grid-column:span 5}
-.g-d,.g-e,.g-f{grid-column:span 4}
-@media (max-width:820px){.gallery{grid-template-columns:1fr 1fr}.g-a{grid-column:span 2;grid-row:auto}.g-a img{aspect-ratio:4/3}.g-b,.g-c,.g-d,.g-e,.g-f{grid-column:span 1}}
-@media (max-width:480px){.gallery{grid-template-columns:1fr}.g-a,.g-b,.g-c,.g-d,.g-e,.g-f{grid-column:auto}}
+.work{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.work figure{margin:0;position:relative;overflow:hidden;background:#ddd7cc}
+.work .im{aspect-ratio:4/3;overflow:hidden}
+.work img{width:100%;height:100%;object-fit:cover;transition:transform 1.1s var(--ease)}
+.work figure:hover img{transform:scale(1.05)}
+.work figcaption{display:flex;justify-content:space-between;gap:12px;padding:14px 2px 0;background:var(--paper);font-weight:600}
+.work figcaption small{font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--soft);padding-top:3px}
+@media(max-width:900px){.work{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.work{grid-template-columns:1fr}}
 
-/* flyover add-on */
-.flyover{background:var(--asphalt);color:#fff}
-.flyover .sec-head p{color:#cfcac1}
-.addon-flag{display:inline-block;background:var(--stripe);color:#111;font-weight:800;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;padding:var(--s1) var(--s2);border-radius:2px;margin-bottom:var(--s3)}
-.fly-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:var(--s6);align-items:start}
-.viewfinder{position:relative;aspect-ratio:16/10;overflow:hidden;border-radius:var(--r);background:#000}
-.viewfinder img{position:absolute;inset:-12%;width:124%;height:124%;max-width:none;object-fit:cover;animation:fly 22s ease-in-out infinite alternate;filter:saturate(1.05) contrast(1.05)}
-.viewfinder.paused img{animation-play-state:paused}
-@keyframes fly{0%{transform:scale(1.02) translate(-4%,-3%) rotate(-1.5deg)}50%{transform:scale(1.12) translate(3%,2%) rotate(1deg)}100%{transform:scale(1.2) translate(-2%,4%) rotate(2deg)}}
-.hud{position:absolute;inset:0;pointer-events:none;font:600 .78rem/1 ui-monospace,Menlo,Consolas,monospace;letter-spacing:.06em}
-.hud .c{position:absolute;width:28px;height:28px;border:2px solid rgba(255,255,255,.85)}
-.hud .tl{top:16px;left:16px;border-right:0;border-bottom:0}.hud .tr{top:16px;right:16px;border-left:0;border-bottom:0}
-.hud .bl{bottom:16px;left:16px;border-right:0;border-top:0}.hud .br{bottom:16px;right:16px;border-left:0;border-top:0}
-.hud .rec{position:absolute;top:24px;left:56px;display:flex;align-items:center;gap:6px;background:rgba(0,0,0,.45);padding:5px 8px}
-.hud .rec::before{content:"";width:9px;height:9px;border-radius:50%;background:#ff3b30;animation:blink 1.2s steps(2) infinite}
-@keyframes blink{50%{opacity:0}}
-.hud .alt{position:absolute;bottom:24px;left:56px;background:rgba(0,0,0,.45);padding:5px 8px}
-.hud .loc{position:absolute;bottom:24px;right:56px;background:rgba(0,0,0,.45);padding:5px 8px}
-.hud .cross{position:absolute;left:50%;top:50%;width:40px;height:40px;margin:-20px 0 0 -20px}
-.hud .cross::before,.hud .cross::after{content:"";position:absolute;background:rgba(255,255,255,.7)}
-.hud .cross::before{left:50%;top:0;bottom:0;width:1.5px}.hud .cross::after{top:50%;left:0;right:0;height:1.5px}
-.vf-ctrl{position:absolute;top:16px;right:56px;pointer-events:auto;background:rgba(0,0,0,.6);color:#fff;border:1.5px solid rgba(255,255,255,.6);border-radius:2px;font:700 .8rem var(--body);min-height:36px;padding:0 var(--s3);cursor:pointer}
-.fly-copy h3{font-size:2rem;margin-bottom:var(--s3)}
-.fly-copy ul{margin:0 0 var(--s4);padding:0;list-style:none}
-.fly-copy li{padding:var(--s3) 0;border-bottom:1px solid var(--seam);color:#e3dfd7}
-.fly-copy li b{color:#fff}
-.price-chip{display:flex;align-items:baseline;gap:var(--s2);margin:var(--s4) 0}
-.price-chip b{font-family:var(--display);font-size:3rem;font-weight:900;color:var(--stripe);line-height:1}
-.demo-note{font-size:.86rem;color:#bdb8ae;margin:var(--s3) 0 0}
-.light .demo-note{color:var(--muted)}
-@media (max-width:920px){.fly-grid{grid-template-columns:1fr}}
+/* services */
+.svc{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:56px;border-top:1px solid #2e2e2e}
+.svc div{display:grid;grid-template-columns:60px minmax(0,1fr);gap:4px 16px;padding:28px 0;border-bottom:1px solid #2e2e2e}
+.svc .n{font-family:var(--serif);font-size:1.1rem;color:var(--brass-l);grid-row:span 2;padding-top:6px}
+.svc h3{font-size:1.9rem}
+.svc p{margin:0;color:#a39d92}
+.svc small{display:inline-block;margin-left:10px;font-family:var(--sans);font-size:.68rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#8e887e;vertical-align:middle}
+@media(max-width:860px){.svc{grid-template-columns:1fr}}
 
-/* how it goes in */
-.steps{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:var(--s4);padding-top:var(--s6)}
-.steps::before{content:"";position:absolute;left:0;right:0;top:12px;height:24px;background:var(--asphalt);border-radius:2px}
-.steps::after{content:"";position:absolute;left:12px;right:12px;top:22px;height:4px;background:repeating-linear-gradient(90deg,var(--stripe) 0 30px,transparent 30px 52px)}
-.step{position:relative}
-.step .pin{position:absolute;top:-48px;left:0;width:40px;height:40px;border-radius:50%;background:var(--red);color:#fff;display:grid;place-items:center;font-family:var(--display);font-weight:900;font-size:1.3rem;z-index:2;border:4px solid var(--paper)}
-.step h3{font-size:1.6rem;margin:var(--s3) 0 var(--s2)}
-.step p{margin:0;color:var(--muted)}
-@media (max-width:820px){.steps{grid-template-columns:1fr;padding-top:0;padding-left:var(--s6)}.steps::before{left:8px;right:auto;top:0;bottom:0;width:20px;height:auto}.steps::after{left:16px;right:auto;top:8px;bottom:8px;width:4px;height:auto;background:repeating-linear-gradient(180deg,var(--stripe) 0 24px,transparent 24px 40px)}.step .pin{left:-50px;top:0}.step h3{margin-top:0}}
+/* planner */
+.pl{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:24px;align-items:stretch}
+.pl .plan{background:var(--asph)}
+.opts{background:var(--card);border:1px solid var(--line);padding:30px;display:flex;flex-direction:column;gap:22px}
+.opts h3{font-size:1.8rem}
+.og{display:grid;gap:10px}
+.og>span{font-size:.72rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--soft)}
+.ch{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.ch button{min-height:52px;padding:8px 14px;border:1px solid var(--line);background:var(--paper);font-weight:700;text-align:left;cursor:pointer;transition:border-color .2s,background .2s,color .2s}
+.ch button:hover{border-color:var(--ink)}
+.ch button[aria-pressed=true]{background:var(--asph);border-color:var(--asph);color:var(--paper)}
+.ch button small{display:block;font-weight:500;font-size:.78rem;opacity:.7}
+.sum{margin-top:auto;padding:16px 18px;background:var(--stone);font-weight:600}
+.sum span{display:block;font-size:.72rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--brass-d);margin-bottom:4px}
+.opts .btn{width:100%}
+.opts .fine{font-size:.82rem;color:var(--soft);margin:0}
+@media(max-width:980px){.pl{grid-template-columns:1fr}}
+@media(max-width:420px){.opts{padding:20px}.ch{grid-template-columns:1fr}}
+
+/* process road */
+.road{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;list-style:none;margin:0;padding:0}
+.road::before{content:"";position:absolute;left:0;right:0;top:30px;height:14px;background:var(--asph)}
+.road .ln{position:absolute;left:0;right:0;top:36px;height:2px;background:repeating-linear-gradient(90deg,var(--brass) 0 26px,transparent 26px 44px);transform-origin:0 50%}
+.js .road .ln{transform:scaleX(0);transition:transform 2s cubic-bezier(.6,.05,.3,1)}
+.js .road.in .ln{transform:scaleX(1)}
+.road li{position:relative;padding-top:76px}
+.road li::before{content:attr(data-n);position:absolute;top:14px;left:0;width:46px;height:46px;border-radius:50%;background:var(--paper);border:1px solid var(--ink);display:grid;place-items:center;font-family:var(--serif);font-size:1.2rem}
+.road h3{font-size:1.7rem;margin-bottom:8px}
+.road p{margin:0;color:var(--soft)}
+@media(max-width:860px){.road{grid-template-columns:1fr 1fr;row-gap:30px}.road::before,.road .ln{display:none}.road li{padding-top:62px}}
+@media(max-width:480px){.road{grid-template-columns:1fr}}
 
 /* specials */
-.specials{background:var(--red);color:#fff}
-.specials .kicker{color:#fff}
-.specials .sec-head p{color:#fde7e4}
-.coupons{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s4)}
-.coupon{border:2px dashed rgba(255,255,255,.75);border-radius:var(--r);padding:var(--s5) var(--s4);position:relative;background:rgba(0,0,0,.08)}
-.coupon h3{font-size:2.1rem;margin-bottom:var(--s2)}
-.coupon p{margin:0;color:#fff4f2}
-.coupon .scissor{position:absolute;top:-13px;left:var(--s4);background:var(--red);padding:0 var(--s2);font-size:.75rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
-@media (max-width:820px){.coupons{grid-template-columns:1fr}}
+.sp{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.coupon{position:relative;background:var(--card);border:1px dashed #b9b1a3;padding:30px 28px 28px;overflow:hidden}
+.coupon::before,.coupon::after{content:"";position:absolute;top:50%;width:26px;height:26px;border-radius:50%;background:var(--paper);border:1px dashed #b9b1a3;transform:translateY(-50%)}
+.coupon::before{left:-14px}.coupon::after{right:-14px}
+.coupon span{font-size:.7rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--brass-d)}
+.coupon h3{font-size:2rem;margin:10px 0 8px}
+.coupon p{margin:0;color:var(--soft)}
+.sp-note{margin:18px 0 0;font-size:.88rem;color:var(--soft)}
+@media(max-width:860px){.sp{grid-template-columns:1fr}}
 
-/* family */
-.family-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:var(--s7);align-items:center}
-.family-grid figure{margin:0;position:relative}
-.family-grid figure img{border-radius:var(--r);width:100%;aspect-ratio:4/3;object-fit:cover}
-.yr{position:absolute;right:-16px;bottom:-24px;background:var(--asphalt);color:#fff;padding:var(--s3) var(--s4);font-family:var(--display);font-weight:900;font-size:3.4rem;line-height:1;border-left:6px solid var(--red)}
-.yr small{display:block;font-family:var(--body);font-size:.75rem;font-weight:600;letter-spacing:.14em;color:var(--mist);margin-top:4px}
-.family-grid h2{font-size:clamp(2.3rem,4.6vw,3.8rem);margin-bottom:var(--s4)}
-.family-grid p{color:var(--muted);margin:0 0 var(--s3)}
-@media (max-width:860px){.family-grid{grid-template-columns:1fr;gap:var(--s6)}.yr{right:var(--s3)}}
+/* family timeline */
+.fam{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:64px;align-items:start}
+.year{font-family:var(--serif);font-size:clamp(6rem,15vw,12rem);line-height:.8;color:var(--brass-l);letter-spacing:-.03em}
+.fam .intro{font-size:1.1rem;color:#c9c3b8;margin:26px 0 30px;max-width:30em}
+.tl{list-style:none;margin:0;padding:0;position:relative}
+.tl::before{content:"";position:absolute;left:7px;top:10px;bottom:10px;width:1px;background:#3a3a3a}
+.tl li{position:relative;padding:0 0 30px 40px}
+.tl li::before{content:"";position:absolute;left:0;top:8px;width:15px;height:15px;border-radius:50%;background:var(--asph);border:1px solid var(--brass)}
+.tl li.on::before{background:var(--brass)}
+.tl b{display:block;font-size:.74rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--brass-l)}
+.tl h3{font-size:1.6rem;margin:6px 0 4px}
+.tl p{margin:0;color:#a39d92}
+@media(max-width:900px){.fam{grid-template-columns:1fr;gap:36px}}
 
 /* estimate */
-.estimate{background:var(--chalk)}
-.est-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:var(--s7)}
-.est-grid h2{font-size:clamp(2.4rem,5vw,4rem);margin-bottom:var(--s4)}
-.contact-list{list-style:none;padding:0;margin:var(--s5) 0 0}
-.contact-list li{padding:var(--s3) 0;border-top:1px solid #d6d0c4}
-.contact-list b{display:block;font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
-.contact-list a{font-weight:700;font-size:1.2rem;text-decoration:none}
-form.card{background:#fff;border-radius:var(--r);padding:var(--s5);box-shadow:0 1px 0 #d6d0c4,0 18px 40px rgba(0,0,0,.06)}
-.row2{display:grid;grid-template-columns:1fr 1fr;gap:var(--s3)}
-.field{margin-bottom:var(--s3)}
-label{display:block;font-weight:700;font-size:.9rem;margin-bottom:var(--s1)}
-input,select,textarea{width:100%;font:inherit;font-size:1rem;padding:12px 14px;border:1.5px solid #bdb7ab;border-radius:var(--r);background:#fff;color:var(--ink);min-height:48px}
-input:focus,select:focus,textarea:focus{border-color:var(--ink);outline:3px solid var(--stripe);outline-offset:1px}
-textarea{min-height:110px;resize:vertical}
-.err{color:#a31d14;font-size:.85rem;font-weight:600;margin-top:4px}
-.chips{display:flex;flex-wrap:wrap;gap:var(--s2)}
-.chips label{margin:0;font-weight:600;font-size:.92rem;border:1.5px solid #bdb7ab;border-radius:var(--r);padding:10px 14px;min-height:44px;display:flex;align-items:center;cursor:pointer}
-.chips input{position:absolute;opacity:0;width:1px;height:1px;min-height:0}
-.chips input:checked+span{color:#fff}
-.chips label:has(input:checked){background:var(--ink);border-color:var(--ink);color:#fff}
-.chips label:has(input:focus-visible){outline:3px solid var(--stripe);outline-offset:2px}
-.ok{background:#fff;border-radius:var(--r);padding:var(--s6) var(--s5);border-top:6px solid var(--red)}
-.ok h3{font-size:2.4rem;margin-bottom:var(--s3)}
-@media (max-width:860px){.est-grid{grid-template-columns:1fr;gap:var(--s6)}}
-@media (max-width:520px){.row2{grid-template-columns:1fr}form.card{padding:var(--s4)}}
+.eg{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:24px;align-items:stretch}
+.form{background:var(--card);border:1px solid var(--line);padding:32px;display:flex;flex-direction:column}
+.form form{display:flex;flex-direction:column;gap:18px;flex:1}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.fld{display:grid;gap:6px;font-weight:700;font-size:.86rem}
+.fld input,.fld textarea{width:100%;min-height:54px;border:0;border-bottom:1.5px solid var(--ink);background:var(--paper);padding:12px 14px;font:inherit;font-weight:400;font-size:1rem;border-radius:0}
+.fld textarea{min-height:100px;resize:vertical;height:100%}
+.fld.grow{flex:1;grid-template-rows:auto 1fr}
+.fld input:focus,.fld textarea:focus{outline:2px solid var(--brass);outline-offset:0}
+.err{color:#a3321c;font-size:.85rem;font-weight:600}
+.types{display:flex;flex-wrap:wrap;gap:8px}
+.types button{min-height:46px;padding:0 16px;border:1px solid var(--line);background:var(--paper);font-weight:700;cursor:pointer}
+.types button[aria-pressed=true]{background:var(--asph);border-color:var(--asph);color:var(--paper)}
+.plantag{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:14px 16px;background:var(--stone)}
+.plantag b{display:block}
+.plantag span{font-size:.86rem;color:var(--soft)}
+.plantag a{font-weight:700;font-size:.82rem;white-space:nowrap;min-height:44px;display:inline-flex;align-items:center}
+.demo{font-size:.85rem;color:var(--soft);margin:0}
+.ok{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:flex-start}
+.ok h3{font-size:2.6rem;margin-bottom:10px}
+.office{background:var(--asph);color:var(--paper);padding:32px;display:flex;flex-direction:column}
+.office h3{font-size:2rem;margin-bottom:18px}
+.office dl{margin:0}
+.office dl div{padding:16px 0;border-top:1px solid #2e2e2e}
+.office dt{font-size:.7rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#8e887e}
+.office dd{margin:4px 0 0;font-weight:600}
+.office dd a{text-decoration:none;display:inline-flex;align-items:center;min-height:44px}
+.office .big{font-family:var(--serif);font-size:2rem;font-weight:500}
+.office .acts{margin-top:auto;padding-top:24px;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.office .btn{min-height:52px;padding:0 10px;font-size:.74rem}
+@media(max-width:980px){.eg{grid-template-columns:1fr}}
+@media(max-width:520px){.form,.office{padding:20px}.f2{grid-template-columns:1fr}}
 
-footer{background:var(--asphalt);color:#cfcac1;padding:var(--s7) 0 var(--s5);font-size:.92rem}
-.ft{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:var(--s5);padding-bottom:var(--s5);border-bottom:1px solid var(--seam)}
-footer h4{font-family:var(--display);text-transform:uppercase;font-size:1.2rem;color:#fff;margin:0 0 var(--s2);letter-spacing:.04em}
-footer p{margin:0 0 var(--s2)}
-footer a{color:#fff}
-.dis{font-size:.8rem;color:#9a958c;margin-top:var(--s4);max-width:70em}
-@media (max-width:760px){.ft{grid-template-columns:1fr}}
-.mobile-call{display:none}
-@media (max-width:640px){.mobile-call{display:flex;position:fixed;left:var(--s3);right:var(--s3);bottom:var(--s3);z-index:50;box-shadow:0 10px 30px rgba(0,0,0,.35)}body{padding-bottom:84px}}
+footer{background:#0b0b0b;color:#9a948a;padding:40px 0 44px;font-size:.88rem}
+footer .r{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;padding-bottom:18px;border-bottom:1px solid #222}
+footer b{color:var(--paper);font-family:var(--serif);font-weight:500;font-size:1.2rem}
+footer a{display:inline-flex;align-items:center;min-height:44px}
+footer .dis{margin:18px 0 0;max-width:74em;font-size:.8rem}
+.mbar{display:none}
+@media(max-width:640px){.mbar{display:grid;grid-template-columns:1fr 1fr;position:fixed;left:0;right:0;bottom:0;z-index:60}.mbar .btn{min-height:58px}body{padding-bottom:58px}}
+
+@media(prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}
+ *,*::before,*::after{animation:none!important;transition:none!important}
+ .js .rv{opacity:1;transform:none}.js .hero h1 .l>span{transform:none}.js .road .ln{transform:none}
+}
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<div class="concept">Website concept by <a href="https://www.lisettecolon.com">Lisette Colon</a>. This is a sample, not the official T. Riccoboni Asphalt Paving site.</div>
+<div class="concept">Website concept by <a href="https://www.lisettecolon.com">Lisette Colon</a>. A sample, not the official T. Riccoboni Asphalt Paving site.</div>
 
-<header class="site">
- <div class="wrap hd">
-  <a class="brand" href="#top" aria-label="T. Riccoboni Asphalt Paving, home"><b>T.&nbsp;RICCOBONI<span>.</span></b><small>Asphalt Paving &middot; Since 1987</small></a>
-  <nav class="main" id="nav" aria-label="Main">
-   <ul>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#work">Our work</a></li>
-    <li><a href="#flyover">Drone flyover</a></li>
-    <li><a href="#specials">Specials</a></li>
-    <li><a href="#estimate">Estimate</a></li>
-   </ul>
-  </nav>
-  <div style="display:flex;gap:8px;align-items:center">
-   <a class="btn btn-red call-top" href="tel:+15164962096">(516) 496-2096</a>
-   <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
-  </div>
- </div>
-</header>
+<header class="hdr"><div class="wrap">
+ <a class="brand" href="#top"><b>T. Riccoboni</b><small>Asphalt Paving · Est. 1987</small></a>
+ <nav class="nav" id="nav" aria-label="Main"><a href="#work">Work</a><a href="#services">Services</a><a href="#planner">Plan a driveway</a><a href="#family">Since 1987</a><a href="#estimate">Estimate</a></nav>
+ <a class="tel" href="tel:+15164962096">(516) 496-2096</a>
+ <a class="btn btn-b" href="#estimate">Request an estimate</a>
+ <button class="menu" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+</div></header>
 
-<main id="main">
-<div class="hero" id="top">
- <div class="wrap hero-grid">
+<main id="main" tabindex="-1">
+<section class="hero dark" id="top" style="padding-bottom:0"><div class="wrap">
+ <div class="hero-g">
   <div>
-   <p class="kicker">Syosset, Long Island</p>
-   <h1>Blacktop laid by a <em>paving family</em> since 1987.</h1>
-   <p class="lead">Driveways, walkways, sport courts, parking lots and private roads across Nassau and Suffolk. Owner Tim Riccoboni learned the trade from his father and grandfather, and the company has been paving Long Island for close to four decades.</p>
-   <div class="cta-row">
-    <a class="btn btn-red" href="#estimate">Request an estimate</a>
-    <a class="btn btn-line" href="tel:+15164962096">Call (516) 496-2096</a>
-   </div>
+   <h1><span class="l"><span style="--i:0">Three generations</span></span><span class="l"><span style="--i:1">of Long Island</span></span><span class="l"><span class="br" style="--i:2">blacktop.</span></span></h1>
+   <p class="lead rv" style="--d:4">Driveways, walkways, patios, parking lots, private roads and sport courts across Nassau and Suffolk. Tim Riccoboni learned the trade from his father and grandfather, and has been paving Long Island since 1987.</p>
+   <div class="cta rv" style="--d:5"><a class="btn btn-b" href="#estimate">Request an estimate</a><a class="btn btn-w" href="tel:+15164962096">Call (516) 496-2096</a></div>
   </div>
-  <div class="hero-photos">
-   <figure class="hp1"><img src="https://trpaving.com/wp-content/uploads/asphalt-paving-trpaving-long-island-big-job1.jpg" alt="Long new asphalt driveway with crisp edges leading to a house" width="500" height="375"><figcaption>Full driveway install</figcaption></figure>
-   <figure class="hp2"><img src="https://trpaving.com/wp-content/uploads/asphalt-paving-half-circle-trpaving-long-island-big-job3.jpg" alt="Freshly paved half-circle driveway" width="500" height="375" loading="lazy"><figcaption>Half-circle driveway</figcaption></figure>
+  <div class="plan rv" style="--d:2">
+   <svg id="heroPlan" viewBox="0 0 600 440" aria-label="Illustrated top-down view of a house lot with a new driveway being paved" role="img"></svg>
+   <div class="cap"><span>Plan view</span><b id="heroCap">Paving in progress</b></div>
   </div>
  </div>
- <div class="road" aria-hidden="true"></div>
-</div>
+ <div class="creds">
+  <div><b>1987</b><span>Paving Long Island since February 1987</span></div>
+  <div><b>A<sup>+</sup></b><span>BBB rating, accredited since 2012</span></div>
+  <div><b>4.8</b><span>Average from 169 HomeAdvisor reviews</span></div>
+  <div><b>10 yrs</b><span>Angie's List service awards, 2014 through 2023</span></div>
+ </div>
+</div></section>
 
-<div class="proof">
- <ul class="wrap">
-  <li><b>1987</b><span>Paving Long Island since February 1987</span></li>
-  <li><b>A<i>+</i></b><span>BBB rating, accredited since 2012</span></li>
-  <li><b>4.8</b><span>Average from 169 HomeAdvisor reviews</span></li>
-  <li><b>3<i>rd</i></b><span>Generation in the paving trade, family owned</span></li>
- </ul>
-</div>
+<section id="work" tabindex="-1"><div class="wrap">
+ <div class="head">
+  <div class="rv"><p class="lbl">Recent work</p><h2>Driveways around Long Island.</h2></div>
+  <p class="rv" style="--d:1">Photos from T. Riccoboni's own job gallery, from straight runs and half-circles to steep inclines and brick-trimmed drives.</p>
+ </div>
+ <div class="work">
+  <figure class="rv"><div class="im"><img src="https://trpaving.com/wp-content/uploads/asphalt-paving-trpaving-long-island-big-job1.jpg" alt="Long new asphalt driveway with crisp edges leading to a house" loading="lazy"></div><figcaption>Full driveway install<small>Residential</small></figcaption></figure>
+  <figure class="rv" style="--d:1"><div class="im"><img src="https://trpaving.com/wp-content/uploads/asphalt-paving-half-circle-trpaving-long-island-big-job3.jpg" alt="Freshly paved half-circle driveway" loading="lazy"></div><figcaption>Half-circle driveway<small>Residential</small></figcaption></figure>
+  <figure class="rv" style="--d:2"><div class="im"><img src="https://trpaving.com/wp-content/uploads/asphalt-paving-and-brick-trpaving-long-island-big-job1.jpg" alt="Asphalt driveway with brick detailing" loading="lazy"></div><figcaption>Asphalt and brick<small>Residential</small></figcaption></figure>
+  <figure class="rv"><div class="im"><img src="https://trpaving.com/wp-content/uploads/asphalt-paving-high-incline-trpaving-long-island-job1.jpg" alt="Asphalt driveway on a steep incline" loading="lazy"></div><figcaption>High-incline driveway<small>Residential</small></figcaption></figure>
+  <figure class="rv" style="--d:1"><div class="im"><img src="https://trpaving.com/wp-content/uploads/asphalt-paving-and-landscaping-trpaving-long-island-main.jpg" alt="Asphalt driveway finished alongside new landscaping" loading="lazy"></div><figcaption>Paving with landscaping<small>Residential</small></figcaption></figure>
+  <figure class="rv" style="--d:2"><div class="im"><img src="https://trpaving.com/wp-content/uploads/asphalt-paving-root-driveway-tr-paving-job1.jpg" alt="Driveway rebuilt after tree root damage" loading="lazy"></div><figcaption>Root damage rebuild<small>Repair</small></figcaption></figure>
+ </div>
+</div></section>
 
-<section id="services">
- <div class="wrap">
-  <div class="sec-head">
-   <div><p class="kicker">What we pave</p><h2>One crew for the whole job, from excavation to the last roll.</h2></div>
-   <p>Homeowners, schools, clubs and property managers call for different things. Here is everything T. Riccoboni handles, so you know before you pick up the phone.</p>
+<section class="dark" id="services" tabindex="-1"><div class="wrap">
+ <div class="head">
+  <div class="rv"><p class="lbl">What we pave</p><h2>One crew, from excavation to the last roll.</h2></div>
+  <p class="rv" style="--d:1">Homeowners, schools, clubs and property managers call for different things. Here's everything T. Riccoboni handles.</p>
+ </div>
+ <div class="svc">
+  <div class="rv"><span class="n">01</span><h3>Driveways<small>Most requested</small></h3><p>New installs and full replacements: straight runs, half-circles and steep inclines.</p></div>
+  <div class="rv" style="--d:1"><span class="n">02</span><h3>Stoops &amp; walkways</h3><p>Front paths and steps that tie the driveway to the door.</p></div>
+  <div class="rv"><span class="n">03</span><h3>Patios</h3><p>Backyard surfaces built on a properly graded base.</p></div>
+  <div class="rv" style="--d:1"><span class="n">04</span><h3>Excavation</h3><p>Old surface out, roots and soft spots dealt with, grade set before anything goes down.</p></div>
+  <div class="rv"><span class="n">05</span><h3>Parking lots<small>Commercial</small></h3><p>Lots for businesses, offices and houses of worship.</p></div>
+  <div class="rv" style="--d:1"><span class="n">06</span><h3>Private roads<small>Commercial</small></h3><p>Shared drives and private roads for associations and estates.</p></div>
+  <div class="rv"><span class="n">07</span><h3>Sport courts &amp; tracks</h3><p>Basketball courts, sporting courts and running tracks for schools and clubs.</p></div>
+  <div class="rv" style="--d:1"><span class="n">08</span><h3>Specials</h3><p>Senior rates, neighbor savings and flyer offers. <a href="#specials" style="color:var(--brass-l)">See the specials</a></p></div>
+ </div>
+</div></section>
+
+<section id="planner" tabindex="-1"><div class="wrap">
+ <div class="head">
+  <div class="rv"><p class="lbl">Plan a driveway</p><h2>Sketch it before the estimate.</h2></div>
+  <p class="rv" style="--d:1">Pick a shape and the details you want, and watch it get paved. Your sketch is added to your estimate request so the walk-through starts on the same page.</p>
+ </div>
+ <div class="pl">
+  <div class="plan rv">
+   <svg id="planSvg" viewBox="0 0 600 440" aria-label="Illustrated top-down plan of the driveway you design" role="img"></svg>
+   <div class="cap"><span>Your sketch</span><b id="planCap">Straight</b></div>
   </div>
-  <div class="ledger">
-   <div class="ledger-row"><span class="no">01</span><h3>Driveways</h3><p>New installs and full replacements, straight runs, half-circles and steep inclines.</p><span class="tag">Most requested</span></div>
-   <div class="ledger-row"><span class="no">02</span><h3>Stoops &amp; walkways</h3><p>Front paths and steps that tie the driveway to the door.</p><span class="tag">Residential</span></div>
-   <div class="ledger-row"><span class="no">03</span><h3>Patios</h3><p>Backyard surfaces built on a properly graded base.</p><span class="tag">Residential</span></div>
-   <div class="ledger-row"><span class="no">04</span><h3>Excavation</h3><p>Old surface out, roots and soft spots dealt with, grade set before anything goes down.</p><span class="tag">Prep</span></div>
-   <div class="ledger-row"><span class="no">05</span><h3>Parking lots</h3><p>Lots for businesses, offices and houses of worship.</p><span class="tag">Commercial</span></div>
-   <div class="ledger-row"><span class="no">06</span><h3>Private roads</h3><p>Shared drives and private roads for associations and estates.</p><span class="tag">Commercial</span></div>
-   <div class="ledger-row"><span class="no">07</span><h3>Sport courts &amp; tracks</h3><p>Basketball courts, sporting courts and running tracks.</p><span class="tag">Schools &amp; clubs</span></div>
+  <div class="opts rv" style="--d:1">
+   <h3>Your driveway</h3>
+   <div class="og"><span>Shape</span><div class="ch" id="shape">
+    <button type="button" aria-pressed="true" data-v="straight">Straight<small>To the garage</small></button>
+    <button type="button" aria-pressed="false" data-v="circle">Half-circle<small>In and out</small></button>
+    <button type="button" aria-pressed="false" data-v="side">Side entry<small>Turns to the garage</small></button>
+    <button type="button" aria-pressed="false" data-v="wide">Two-car wide<small>Extra width</small></button>
+   </div></div>
+   <div class="og"><span>Details</span><div class="ch" id="extras">
+    <button type="button" aria-pressed="false" data-v="brick">Brick border<small>Along both edges</small></button>
+    <button type="button" aria-pressed="false" data-v="walk">Walkway<small>To the front door</small></button>
+   </div></div>
+   <div class="sum" id="sum"><span>Sketch summary</span><em style="font-style:normal" id="sumT">Straight driveway</em></div>
+   <a class="btn btn-k" href="#estimate">Use this sketch in my estimate</a>
+   <p class="fine">Illustration for planning only. Final layout, sizes and price come from the walk-through.</p>
   </div>
  </div>
-</section>
+</div></section>
 
-<section class="work" id="work">
- <div class="wrap">
-  <div class="sec-head">
-   <div><p class="kicker">Recent work</p><h2>Driveways around Long Island.</h2></div>
-   <p>Photos from T. Riccoboni's own job gallery. On a finished site each one opens into a before and after set from the same job.</p>
-  </div>
-  <div class="gallery">
-   <figure class="g-a"><img src="https://trpaving.com/wp-content/uploads/asphalt-paving-and-landscaping-trpaving-long-island-main.jpg" alt="Asphalt driveway finished alongside new landscaping" width="500" height="375" loading="lazy"><figcaption>Paving with landscaping</figcaption></figure>
-   <figure class="g-b"><img src="https://trpaving.com/wp-content/uploads/asphalt-paving-and-brick-trpaving-long-island-big-job1.jpg" alt="Asphalt driveway with brick detailing" width="500" height="375" loading="lazy"><figcaption>Asphalt and brick</figcaption></figure>
-   <figure class="g-c"><img src="https://trpaving.com/wp-content/uploads/asphalt-paving-high-incline-trpaving-long-island-job1.jpg" alt="Asphalt driveway on a steep incline" width="500" height="375" loading="lazy"><figcaption>High-incline driveway</figcaption></figure>
-   <figure class="g-d"><img src="https://trpaving.com/wp-content/uploads/asphalt-paving-flat-driveway-trpaving-long-island-big-job1.jpg" alt="Wide flat asphalt driveway" width="500" height="375" loading="lazy"><figcaption>Flat driveway</figcaption></figure>
-   <figure class="g-e"><img src="https://trpaving.com/wp-content/uploads/asphalt-paving-and-brick-trpaving-long-island-big-job2.jpg" alt="Second asphalt and brick driveway project" width="500" height="375" loading="lazy"><figcaption>Asphalt and brick, second job</figcaption></figure>
-   <figure class="g-f"><img src="https://trpaving.com/wp-content/uploads/asphalt-paving-root-driveway-tr-paving-job1.jpg" alt="Driveway rebuilt after tree root damage" width="500" height="375" loading="lazy"><figcaption>Root damage rebuild</figcaption></figure>
-  </div>
+<section style="background:var(--stone)" id="process" tabindex="-1"><div class="wrap">
+ <div class="head">
+  <div class="rv"><p class="lbl">How a driveway goes in</p><h2>Four stops to finished blacktop.</h2></div>
+  <p class="rv" style="--d:1">Most people only replace a driveway once or twice. Knowing what happens on each day takes the guesswork out of it.</p>
  </div>
-</section>
+ <ol class="road" id="road">
+  <span class="ln" aria-hidden="true"></span>
+  <li data-n="1"><h3>Estimate</h3><p>A walk-through of the property, measurements and a written price.</p></li>
+  <li data-n="2"><h3>Excavate</h3><p>The old surface comes out and problem spots, like roots, are handled.</p></li>
+  <li data-n="3"><h3>Grade &amp; base</h3><p>The base is set and pitched so water runs off instead of pooling.</p></li>
+  <li data-n="4"><h3>Pave &amp; roll</h3><p>Hot asphalt goes down, edges are finished and the surface is rolled tight.</p></li>
+ </ol>
+</div></section>
 
-<section class="flyover" id="flyover">
- <div class="wrap">
-  <span class="addon-flag">Featured add-on in this concept</span>
-  <div class="sec-head">
-   <div><p class="kicker">Drone flyover</p><h2>Show the whole driveway, not a corner of it.</h2></div>
-   <p>A phone photo from the sidewalk can't show a long driveway's curve, edges and pitch. A slow drone pass can, and it is the first thing a homeowner comparing quotes sees on the page.</p>
-  </div>
-  <div class="fly-grid">
-   <div class="viewfinder" id="vf">
-    <img src="https://trpaving.com/wp-content/uploads/asphalt-paving-trpaving-long-island-big-job2.jpg" alt="Simulated aerial pass over a finished T. Riccoboni driveway" width="500" height="375" loading="lazy">
-    <div class="hud" aria-hidden="true">
-     <span class="c tl"></span><span class="c tr"></span><span class="c bl"></span><span class="c br"></span>
-     <span class="rec">REC 00:42</span><span class="cross"></span>
-     <span class="alt">ALT 120 FT &middot; 4K</span><span class="loc">NASSAU CO.</span>
+<section id="specials" tabindex="-1"><div class="wrap">
+ <div class="head">
+  <div class="rv"><p class="lbl">Specials</p><h2>Ways to save on your job.</h2></div>
+  <p class="rv" style="--d:1">These offers come from T. Riccoboni's current website. Ask about the details when you call for your estimate.</p>
+ </div>
+ <div class="sp">
+  <div class="coupon rv"><span>Offer</span><h3>Senior citizens</h3><p>A special rate for senior homeowners.</p></div>
+  <div class="coupon rv" style="--d:1"><span>Offer</span><h3>Get a neighbor</h3><p>Pave the same week as someone on your block and both of you save.</p></div>
+  <div class="coupon rv" style="--d:2"><span>Offer</span><h3>Present a flyer</h3><p>Got a T. Riccoboni flyer in the mail? Mention it at your estimate.</p></div>
+ </div>
+</div></section>
+
+<section class="dark" id="family" tabindex="-1"><div class="wrap fam">
+ <div class="rv">
+  <p class="lbl">The Riccoboni name</p>
+  <div class="year">1987</div>
+  <p class="intro">Paving was already the family business before Tim started the company. Nearly forty years later, it still works out of Syosset.</p>
+  <a class="btn btn-b" href="#estimate">Request an estimate</a>
+ </div>
+ <ol class="tl" id="tl">
+  <li class="rv"><b>First generation</b><h3>His grandfather</h3><p>Worked in the paving trade.</p></li>
+  <li class="rv"><b>Second generation</b><h3>His father</h3><p>Also in the trade. Tim learned paving from both of them.</p></li>
+  <li class="rv on"><b>February 1987</b><h3>T. Riccoboni Asphalt Paving</h3><p>Tim starts the company on Long Island.</p></li>
+  <li class="rv"><b>2012</b><h3>BBB accredited</h3><p>Holds an A+ rating with the Better Business Bureau.</p></li>
+  <li class="rv"><b>2014 to 2023</b><h3>Angie's List awards</h3><p>Service awards from 2014 through 2023.</p></li>
+  <li class="rv on" style="padding-bottom:0"><b>Today</b><h3>Still in Syosset</h3><p>187 Berry Hill Rd, serving Nassau and Suffolk.</p></li>
+ </ol>
+</div></section>
+
+<section id="estimate" tabindex="-1"><div class="wrap">
+ <div class="head">
+  <div class="rv"><p class="lbl">Estimates</p><h2>Tell us about the job.</h2></div>
+  <p class="rv" style="--d:1">A few details up front means a faster, more accurate visit.</p>
+ </div>
+ <div class="eg">
+  <div class="form rv">
+   <form id="form" novalidate>
+    <div><p class="fld" style="margin:0 0 8px">Type of job</p><div class="types" id="types">
+     <button type="button" aria-pressed="true">Driveway</button><button type="button" aria-pressed="false">Walkway or stoop</button><button type="button" aria-pressed="false">Patio</button><button type="button" aria-pressed="false">Parking lot</button><button type="button" aria-pressed="false">Court or track</button><button type="button" aria-pressed="false">Private road</button>
+    </div></div>
+    <div class="plantag"><div><b id="ptT">Your sketch: Straight driveway</b><span>From the planner above. Change it anytime.</span></div><a href="#planner">Edit sketch</a></div>
+    <div class="f2">
+     <label class="fld">Name<input id="f-name" autocomplete="name" required><span class="err" hidden>Please add your name.</span></label>
+     <label class="fld">Phone<input id="f-phone" type="tel" inputmode="tel" autocomplete="tel" required><span class="err" hidden>Please add a phone number.</span></label>
     </div>
-    <button class="vf-ctrl" type="button" aria-pressed="false">Pause</button>
-   </div>
-   <div class="fly-copy">
-    <h3>What the add-on includes</h3>
-    <ul>
-     <li><b>Aerial photos and a short video</b> of finished jobs, shot by a licensed drone pilot.</li>
-     <li><b>Edited for the web,</b> so it plays smoothly on phones and loads fast.</li>
-     <li><b>Placed where it sells:</b> the top of the page and the work gallery.</li>
-    </ul>
-    <div class="price-chip"><b>$550</b><span>one-time, added to the website package</span></div>
-    <a class="btn btn-red" href="#estimate">Talk about the flyover</a>
-    <p class="demo-note"><b>Sample feature.</b> The motion above is simulated with a photo from T. Riccoboni's gallery. No drone footage exists yet; real footage would be shot after sign-off.</p>
-   </div>
-  </div>
- </div>
-</section>
-
-<section id="process">
- <div class="wrap">
-  <div class="sec-head">
-   <div><p class="kicker">How a driveway goes in</p><h2>Four stops from estimate to finished blacktop.</h2></div>
-   <p>Most people only replace a driveway once or twice. Knowing what happens on each day takes the guesswork out of it.</p>
-  </div>
-  <div class="steps">
-   <div class="step"><span class="pin">1</span><h3>Estimate</h3><p>A walk-through of the property, measurements, and a written price.</p></div>
-   <div class="step"><span class="pin">2</span><h3>Excavate</h3><p>The old surface comes out and problem spots, like roots, are handled.</p></div>
-   <div class="step"><span class="pin">3</span><h3>Grade &amp; base</h3><p>The base is set and pitched so water runs off instead of pooling.</p></div>
-   <div class="step"><span class="pin">4</span><h3>Pave &amp; roll</h3><p>Hot asphalt goes down, edges are finished and the surface is rolled tight.</p></div>
-  </div>
- </div>
-</section>
-
-<section class="specials" id="specials">
- <div class="wrap">
-  <div class="sec-head">
-   <div><p class="kicker">Specials</p><h2>Ways to save on your job.</h2></div>
-   <p>These offers come from T. Riccoboni's current website. Ask about the details when you call for your estimate.</p>
-  </div>
-  <div class="coupons">
-   <div class="coupon"><span class="scissor">Offer</span><h3>Senior citizens</h3><p>A special rate for senior homeowners.</p></div>
-   <div class="coupon"><span class="scissor">Offer</span><h3>Get a neighbor</h3><p>Pave the same week as someone on your block and both of you save.</p></div>
-   <div class="coupon"><span class="scissor">Offer</span><h3>Present a flyer</h3><p>Got a T. Riccoboni flyer in the mail? Mention it at your estimate.</p></div>
-  </div>
- </div>
-</section>
-
-<section id="family">
- <div class="wrap family-grid">
-  <figure>
-   <img src="https://trpaving.com/wp-content/uploads/asphalt-paving-flat-driveway-trpaving-long-island-big-job3.jpg" alt="Finished asphalt driveway by T. Riccoboni" width="500" height="375" loading="lazy">
-   <div class="yr">1987<small>FAMILY OWNED</small></div>
-  </figure>
-  <div>
-   <p class="kicker">The Riccoboni name</p>
-   <h2>Three generations in the paving trade.</h2>
-   <p>Tim Riccoboni started the company in February 1987. Paving was already the family business: his father and grandfather both worked in it before him.</p>
-   <p>Nearly forty years later the company still works out of Syosset, holds an A+ with the Better Business Bureau, and has collected Angie's List service awards from 2014 through 2023.</p>
-   <a class="btn btn-red" href="#estimate" style="margin-top:var(--s3)">Request an estimate</a>
-  </div>
- </div>
-</section>
-
-<section class="estimate light" id="estimate">
- <div class="wrap est-grid">
-  <div>
-   <p class="kicker">Estimates</p>
-   <h2>Tell us about the job.</h2>
-   <p style="color:var(--muted);margin:0">A few details up front means a faster, more accurate visit.</p>
-   <ul class="contact-list">
-    <li><b>Call</b><a href="tel:+15164962096">(516) 496-2096</a></li>
-    <li><b>Office</b>187 Berry Hill Rd, Syosset, NY 11791</li>
-    <li><b>Service area</b>Nassau and Suffolk counties</li>
-   </ul>
-  </div>
-  <div>
-   <form class="card" id="estForm" data-demo="estOk" novalidate>
-    <div class="row2">
-     <div class="field"><label for="f-name">Name</label><input id="f-name" name="name" autocomplete="name" required><div class="err" hidden>Please add your name.</div></div>
-     <div class="field"><label for="f-phone">Phone</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" required><div class="err" hidden>Please add a phone number.</div></div>
-    </div>
-    <div class="field"><label for="f-town">Town</label><input id="f-town" name="town" autocomplete="address-level2" placeholder="Syosset, Woodbury, Huntington..." required><div class="err" hidden>Please add your town.</div></div>
-    <fieldset class="field" style="border:0;padding:0;margin:0 0 var(--s3)">
-     <legend style="font-weight:700;font-size:.9rem;margin-bottom:var(--s2)">Type of job</legend>
-     <div class="chips">
-      <label><input type="radio" name="type" value="driveway" checked><span>Driveway</span></label>
-      <label><input type="radio" name="type" value="walkway"><span>Walkway or stoop</span></label>
-      <label><input type="radio" name="type" value="patio"><span>Patio</span></label>
-      <label><input type="radio" name="type" value="lot"><span>Parking lot</span></label>
-      <label><input type="radio" name="type" value="court"><span>Court or track</span></label>
-     </div>
-    </fieldset>
-    <div class="field"><label for="f-notes">Anything we should know?</label><textarea id="f-notes" name="notes" placeholder="Approximate size, slope, cracks, tree roots, when you'd like it done"></textarea></div>
-    <button class="btn btn-red" type="submit" style="width:100%">Send estimate request</button>
-    <p class="demo-note"><b>Demo form.</b> This is a website concept. Nothing is sent or saved.</p>
+    <label class="fld">Town<input id="f-town" autocomplete="address-level2" required><span class="err" hidden>Please add your town.</span></label>
+    <label class="fld grow">Anything we should know?<textarea id="f-msg"></textarea></label>
+    <button class="btn btn-k" type="submit" style="width:100%">Send estimate request</button>
+    <p class="demo"><b>Demo form.</b> This is a website concept. Nothing is sent or saved.</p>
    </form>
-   <div class="ok" id="estOk" hidden tabindex="-1">
-    <h3>Demo complete.</h3>
-    <p>On the real site this request would go straight to T. Riccoboni's office. Nothing was sent or saved.</p>
-    <button class="btn btn-line" type="button" data-again="estForm" style="color:var(--ink)">Start over</button>
-   </div>
+   <div class="ok" id="ok" hidden tabindex="-1"><h3>Demo complete.</h3><p>On the real site this request, with your sketch, would go straight to T. Riccoboni's office. Nothing was sent or saved.</p><button class="btn btn-l" type="button" id="again">Start over</button></div>
   </div>
+  <aside class="office rv" style="--d:1">
+   <h3>The office</h3>
+   <dl>
+    <div><dt>Call</dt><dd><a class="big" href="tel:+15164962096">(516) 496-2096</a></dd></div>
+    <div><dt>Office</dt><dd>187 Berry Hill Rd, Syosset, NY 11791</dd></div>
+    <div><dt>Service area</dt><dd>Nassau and Suffolk counties</dd></div>
+    <div><dt>Since</dt><dd>February 1987</dd></div>
+   </dl>
+   <div class="acts"><a class="btn btn-b" href="tel:+15164962096">Call</a><a class="btn btn-w" href="https://www.google.com/maps/dir/?api=1&amp;destination=187+Berry+Hill+Rd+Syosset+NY+11791" target="_blank" rel="noopener">Directions</a></div>
+  </aside>
  </div>
-</section>
+</div></section>
 </main>
 
-<footer>
- <div class="wrap">
-  <div class="ft">
-   <div><h4>T. Riccoboni Asphalt Paving</h4><p>Driveways, walkways, patios, courts, lots and private roads across Long Island since 1987.</p></div>
-   <div><h4>Contact</h4><p><a href="tel:+15164962096">(516) 496-2096</a></p><p>187 Berry Hill Rd<br>Syosset, NY 11791</p></div>
-   <div><h4>Explore</h4><p><a href="#services">Services</a></p><p><a href="#work">Our work</a></p><p><a href="#estimate">Estimate</a></p></div>
-  </div>
-  <p class="dis">Independent website concept designed by Lisette Colon. Not affiliated with or approved by T. Riccoboni Asphalt Paving. Photos, services and specials are from the business's public website (trpaving.com); the BBB rating and HomeAdvisor rating were checked October 2026. The drone flyover is a simulated sample feature.</p>
- </div>
-</footer>
-<a class="btn btn-red mobile-call" href="tel:+15164962096">Call for an estimate &middot; (516) 496-2096</a>
+<footer><div class="wrap">
+ <div class="r"><span><b>T. Riccoboni Asphalt Paving</b> · 187 Berry Hill Rd, Syosset, NY 11791</span><a href="tel:+15164962096">(516) 496-2096</a></div>
+ <p class="dis">Independent website concept designed by Lisette Colon. Not affiliated with or approved by T. Riccoboni Asphalt Paving. Photos, services, history and specials are from the business's public website (trpaving.com); the BBB rating and HomeAdvisor rating were checked October 2026. The driveway planner and paving illustrations are sample features.</p>
+</div></footer>
+<div class="mbar"><a class="btn btn-b" href="#estimate">Estimate</a><a class="btn btn-k" href="tel:+15164962096" style="border-left:1px solid #333">Call</a></div>
 
 <script>
 (function(){
-var d=document,$$=function(s,r){return Array.prototype.slice.call((r||d).querySelectorAll(s));};
-var mb=d.querySelector(".menu-btn"),nav=d.getElementById("nav");
-mb.addEventListener("click",function(){var o=nav.classList.toggle("open");mb.setAttribute("aria-expanded",o);mb.textContent=o?"Close":"Menu";});
-$$("#nav a").forEach(function(a){a.addEventListener("click",function(){nav.classList.remove("open");mb.setAttribute("aria-expanded",false);mb.textContent="Menu";});});
-var vf=d.getElementById("vf"),vb=vf.querySelector(".vf-ctrl");
-if(window.matchMedia("(prefers-reduced-motion: reduce)").matches){vf.classList.add("paused");vb.textContent="Play";vb.setAttribute("aria-pressed","true");}
-vb.addEventListener("click",function(){var p=vf.classList.toggle("paused");vb.textContent=p?"Play":"Pause";vb.setAttribute("aria-pressed",p);});
-var t=0,rec=vf.querySelector(".rec");setInterval(function(){if(vf.classList.contains("paused"))return;t=(t+1)%3600;rec.textContent="REC "+String(Math.floor(t/60)).padStart(2,"0")+":"+String(t%60).padStart(2,"0");},1000);
-$$("form[data-demo]").forEach(function(f){f.addEventListener("submit",function(e){e.preventDefault();var bad=null;$$("[required]",f).forEach(function(i){var ok=!!i.value.trim();var er=i.parentNode.querySelector(".err");if(er)er.hidden=ok;i.setAttribute("aria-invalid",!ok);if(!ok&&!bad)bad=i;});if(bad){bad.focus();return;}var ok=d.getElementById(f.getAttribute("data-demo"));f.hidden=true;ok.hidden=false;ok.focus();});});
-$$("[data-again]").forEach(function(b){b.addEventListener("click",function(){var f=d.getElementById(b.getAttribute("data-again"));f.reset();b.closest(".ok").hidden=true;f.hidden=false;f.querySelector("input").focus();});});
+var d=document,$=function(s,r){return(r||d).querySelector(s)},$$=function(s,r){return[].slice.call((r||d).querySelectorAll(s))};
+var RM=matchMedia("(prefers-reduced-motion: reduce)").matches,NS="http://www.w3.org/2000/svg";
+var mb=$(".menu"),nav=$("#nav");mb.addEventListener("click",function(){var o=nav.classList.toggle("open");mb.setAttribute("aria-expanded",o);mb.textContent=o?"Close":"Menu"});
+$$("#nav a").forEach(function(a){a.addEventListener("click",function(){nav.classList.remove("open");mb.setAttribute("aria-expanded",false);mb.textContent="Menu"})});
+
+/* top-down lot drawing */
+var SHAPES={
+ straight:{d:"M392 372 L392 176",w:74,name:"Straight driveway"},
+ wide:{d:"M392 372 L392 176",w:118,name:"Two-car wide driveway"},
+ circle:{d:"M120 372 C120 214, 470 214, 470 372",w:62,name:"Half-circle driveway"},
+ side:{d:"M528 372 L528 150 L 462 150",w:70,name:"Side-entry driveway"}
+};
+function lot(svg){
+ svg.innerHTML='<rect class="lot" x="0" y="0" width="600" height="362"/>'+
+ '<path class="lot2" d="M0 0 H600 V30 H0Z"/>'+
+ '<rect class="walk" x="0" y="362" width="600" height="16"/>'+
+ '<rect class="street" x="0" y="378" width="600" height="62"/>'+
+ '<line x1="0" y1="409" x2="600" y2="409" stroke="#b8955a" stroke-width="2" stroke-dasharray="22 16"/>'+
+ '<g class="edgeG"></g><g class="drvG"></g>'+
+ '<rect class="house" x="150" y="44" width="300" height="132"/>'+
+ '<path class="roof" d="M150 44 L230 110 L370 110 L450 44 M150 176 L230 110 M450 176 L370 110"/>'+
+ '<rect x="345" y="166" width="94" height="10" class="gdoor"/>'+
+ '<rect x="456" y="70" width="10" height="56" class="gdoor"/>'+
+ '<rect x="246" y="174" width="34" height="8" fill="#b9b2a5"/>'+
+ '<circle class="tree" cx="70" cy="90" r="42"/><circle class="tree2" cx="58" cy="78" r="18"/>'+
+ '<circle class="tree" cx="560" cy="250" r="30"/><circle class="tree2" cx="552" cy="242" r="12"/>'+
+  '<g class="rollerG"></g>';
+}
+function el(p,n,a){var e=d.createElementNS(NS,n);for(var k in a)e.setAttribute(k,a[k]);p.appendChild(e);return e;}
+function pave(svg,cfg,done){
+ var eg=$(".edgeG",svg),dg=$(".drvG",svg),rg=$(".rollerG",svg);eg.innerHTML="";dg.innerHTML="";rg.innerHTML="";
+ var sh=SHAPES[cfg.shape],paths=[[sh.d,sh.w]];
+ if(cfg.walk)paths.push([cfg.shape==="circle"?"M263 186 L263 236":"M263 186 L263 300 Q263 330 300 330 L"+(cfg.shape==="side"?492:(392-sh.w/2))+" 330",26]);
+ var items=paths.map(function(p){
+  var edge=el(eg,"path",{d:p[0],"class":"drv-edge"+(cfg.brick&&p[1]>40?" on":""),"stroke-width":p[1]+16});
+  var base=el(dg,"path",{d:p[0],"class":"drv","stroke-width":p[1]});
+  var sheen=el(dg,"path",{d:p[0],"class":"drv-sheen","stroke-width":p[1]*.35});
+  var L=base.getTotalLength();[base,sheen].forEach(function(x){x.style.strokeDasharray=L;x.style.strokeDashoffset=RM?0:L});
+  if(!RM)edge.style.opacity=0;
+  return{base:base,sheen:sheen,edge:edge,L:L,w:p[1]};
+ });
+ if(RM){done&&done();return;}
+ var roller=el(rg,"g",{"class":"roller"});var drum=el(roller,"rect",{x:-4,y:-1,width:8,height:2});
+ var i=0;
+ function run(){if(i>=items.length){roller.remove();done&&done();return;}
+  var it=items[i],t0=null,dur=Math.max(900,it.L*5.2);drum.setAttribute("x",-it.w/2-4);drum.setAttribute("width",it.w+8);drum.setAttribute("y",-7);drum.setAttribute("height",14);drum.setAttribute("rx",7);
+  function step(t){if(!t0)t0=t;var k=Math.min(1,(t-t0)/dur),e=k<.5?2*k*k:1-Math.pow(-2*k+2,2)/2,l=e*it.L;
+   it.base.style.strokeDashoffset=it.L-l;it.sheen.style.strokeDashoffset=it.L-l;
+   var p=it.base.getPointAtLength(l),q=it.base.getPointAtLength(Math.min(it.L,l+1)),a=Math.atan2(q.y-p.y,q.x-p.x)*180/Math.PI+90;
+   if(l>=it.L-1){var p0=it.base.getPointAtLength(it.L-1);a=Math.atan2(p.y-p0.y,p.x-p0.x)*180/Math.PI+90;}
+   roller.setAttribute("transform","translate("+p.x+" "+p.y+") rotate("+a+")");
+   if(k<1)requestAnimationFrame(step);else{it.edge.style.transition='opacity .6s';it.edge.style.opacity='';i++;setTimeout(run,120);}}
+  requestAnimationFrame(step);}
+ run();
+}
+var hero=$("#heroPlan");lot(hero);
+var hs=$(".hero");setTimeout(function(){hs.classList.add("go")},60);
+setTimeout(function(){pave(hero,{shape:"circle",brick:true,walk:true},function(){$("#heroCap").textContent="Finished and rolled"})},700);
+/* hero edge shows after paving */
+/* planner */
+var ps=$("#planSvg");lot(ps);var cfg={shape:"straight",brick:false,walk:false},planned=false;
+function upd(){var t=SHAPES[cfg.shape].name+(cfg.brick?", brick border":"")+(cfg.walk?", walkway to the door":"");$("#sumT").textContent=t;$("#ptT").textContent="Your sketch: "+t;$("#planCap").textContent=SHAPES[cfg.shape].name.replace(" driveway","");}
+function draw(){upd();pave(ps,cfg);}
+$$("#shape button").forEach(function(b){b.addEventListener("click",function(){$$("#shape button").forEach(function(o){o.setAttribute("aria-pressed",o===b)});cfg.shape=b.getAttribute("data-v");draw();})});
+$$("#extras button").forEach(function(b){b.addEventListener("click",function(){var on=b.getAttribute("aria-pressed")!=="true";b.setAttribute("aria-pressed",on);cfg[b.getAttribute("data-v")]=on;draw();})});
+upd();
+var io=("IntersectionObserver" in window&&!RM)?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");if(e.target===ps&&!planned){planned=true;draw();}io.unobserve(e.target)}})},{rootMargin:"0px 0px -15% 0px"}):null;
+$$(".rv,#road").forEach(function(e){io?io.observe(e):e.classList.add("in")});
+if(io)io.observe(ps);else draw();
+
+/* estimate (demo) */
+$$("#types button").forEach(function(b){b.addEventListener("click",function(){$$("#types button").forEach(function(o){o.setAttribute("aria-pressed",o===b)})})});
+var form=$("#form"),ok=$("#ok");
+form.addEventListener("submit",function(e){e.preventDefault();var bad=null;$$("[required]",form).forEach(function(i){var g=!!i.value.trim();i.parentNode.querySelector(".err").hidden=g;i.setAttribute("aria-invalid",!g);if(!g&&!bad)bad=i;});if(bad){bad.focus();return;}form.hidden=true;ok.hidden=false;ok.focus();});
+$("#again").addEventListener("click",function(){form.reset();$$(".err",form).forEach(function(e){e.hidden=true});ok.hidden=true;form.hidden=false;$("#f-name").focus();});
 })();
 </script>
 </body>
